@@ -1,0 +1,14 @@
+package application;
+
+import java.util.List;
+
+public class ProgramA {
+
+	public static void main(String[] args) {
+		
+		List<Intiger> list;
+		
+		
+	}
+
+}

@@ -1,0 +1,59 @@
+
+
+ 
+class Conta:
+
+    def __init__(self, cpf, nome, saldo):
+        self.cpf = cpf
+        self.nome = nome
+        self.saldo = saldo
+        
+    def atualiza(self, taxa):
+        self._saldo += self._saldo * taxa
+
+class ContaCorrente(Conta):
+
+    def atualiza(self, taxa):
+        self._saldo += self._saldo * taxa * 2 #dobro da taxa
+    
+    def deposita(self, valor):
+        self._saldo += valor - 0.1
+
+class ContaPoupanca(Conta):
+
+    def atualiza(self, taxa):
+        self._saldo += self._saldo * taxa * 3 #triplo da taxa
+        
+c = Conta('123-4', 'Joao', 1000.0)
+cc = ContaCorrente('123-5', 'Jose', 1000.0)
+cp = ContaPoupanca('123-6', 'Maria', 1000.0)
+
+c.atualiza(0.01)
+cc.atualiza(0.01)
+cp.atualiza(0.01)     
+
+print(c.saldo)     
+print(cc.saldo)     
+print(cp.saldo)
+ 
+#  2.Adicione na classe Conta um novo método chamado atualiza() que atualiza 
+#  aconta de acordo com a taxa percentual:a.comando: 
+#  self._saldo += self._saldo * taxa
+ 
+# 3.Crie duas subclasses da classe Conta: ContaCorrente e ContaPoupanca. 
+# Ambas terão o método atualiza() reescrito: a ContaCorrente deve atualizar-se
+# com o dobro da taxa e a ContaPoupanca deve atualizar-se com o triplo dataxa.
+# Além disso, a ContaCorrente deve reescrever o método deposita() afimde retirar
+# uma taxa bancária de dez centavos de cada depósito (saldo = saldo+ deposito - 0.1)
+
+# 4.Abaixo disso, no código cliente, crie algumas instâncias das classes:
+# c = Conta('123-4', 'Joao', 1000.0)     cc = ContaCorrente('123-5', 'Jose', 1000.0)
+# cp = ContaPoupanca('123-6', 'Maria', 1000.0)     c.atualiza(0.01)     cc.atualiza(0.01)
+# cp.atualiza(0.01)     print(c.saldo)     print(cc.saldo)     print(cp.saldo)
+
+# 5.Agora crie uma classe que seja responsável por fazer a atualização de todasas contas
+# bancárias e gerar um relatório com o saldo anterior e saldo novode cada uma das contas.
+# Para tal, crie a classe AtualizadorDeContas.a.atributos: selic e saldo_totalb.métodos:
+# roda(self, conta): este método irá imprimir o saldo atual daconta, executar o método 
+# atualiza passando a taxa selic e depoisimprimir o saldo final. Por fim, pegará o saldo
+# atualizado da conta eadicionará ao ao atributo saldo_total

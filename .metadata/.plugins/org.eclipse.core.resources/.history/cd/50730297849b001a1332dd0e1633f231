@@ -1,0 +1,18 @@
+package entities;
+
+public class Student {
+	public String name;
+	public double n1;
+	public double n2;
+	public double n3;
+	
+	public double media() {
+		return (n1*30 + n2*35 + n3*35);
+	}
+
+	public String toString() {
+		return
+			"FINAL GRADE"
+			+ String.format("%.2f%n", media());
+	}
+}

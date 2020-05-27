@@ -1,0 +1,34 @@
+package application;
+
+import java.util.Scanner;
+
+import entities.Room;
+
+public class Program_room {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+
+		Room[] vect = new Room[n];
+
+		for (int i = 0; i < vect.length; i++) {
+			System.out.printf("Rent #%d", i);
+			String name = sc.nextLine();
+			String email = sc.nextLine();
+			int number = sc.nextInt();
+			vect[number] = new Room(name, email, number);	
+		}
+
+		for (int i = 0; i < vect.length; i++) {
+			if (vect[i] != null) {
+				System.out.printf("%d: %s, %s", vect[i].getNumber(), vect[i].getName(), vect[i].getEmail());
+			}
+		}
+
+		sc.close();
+	}
+
+}

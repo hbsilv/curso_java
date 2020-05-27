@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Python_project/heranca_polimorfismo&apos; to &apos;heranca_polimorfismo.py&apos;" description="Rename resource &apos;heranca_polimorfismo&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="heranca_polimorfismo" name="heranca_polimorfismo.py" stamp="1590156735548" updateReferences="true"/>
+</session>
